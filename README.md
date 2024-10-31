@@ -1,4 +1,4 @@
-# {{PROJECT_NAME}}
+# Weatherly
 
 ## Project Structure
 
@@ -13,6 +13,6 @@
 
 ## GitHub Repository
 
-- **{{GITHUB_REPO}}**
+- **https://github.com/wesaminseiw/weatherly-2211n.git**
 
 
