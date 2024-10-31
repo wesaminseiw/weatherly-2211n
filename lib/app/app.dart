@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weatherly/presentation/themes/themes.dart';
 import '../presentation/screens/home_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -6,9 +7,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      themeMode: ThemeMode.system,
+      theme: lightTheme(),
+      darkTheme: darkTheme(),
+      home: const HomeScreen(),
     );
   }
 }
