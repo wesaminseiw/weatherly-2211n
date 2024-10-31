@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:weatherly/presentation/styles/colors.dart';
+import 'package:weatherly/presentation/themes/custom_themes/text_theme.dart';
 
 ThemeData lightTheme() => ThemeData(
       appBarTheme: const AppBarTheme(
-        backgroundColor: lightPrimaryColor,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarBrightness: Brightness.light,
@@ -13,11 +14,12 @@ ThemeData lightTheme() => ThemeData(
         ),
       ),
       scaffoldBackgroundColor: lightPrimaryColor,
+      textTheme: lightTextTheme,
     );
 
 ThemeData darkTheme() => ThemeData(
       appBarTheme: const AppBarTheme(
-        backgroundColor: darkPrimaryColor,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarBrightness: Brightness.dark,
@@ -26,4 +28,5 @@ ThemeData darkTheme() => ThemeData(
         ),
       ),
       scaffoldBackgroundColor: darkPrimaryColor,
+      textTheme: darkTextTheme,
     );
