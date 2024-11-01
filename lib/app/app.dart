@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
           FetchWeatherEvent(),
         ),
       child: MaterialApp(
+        title: 'Weatherly',
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.system,
         theme: lightTheme(),
