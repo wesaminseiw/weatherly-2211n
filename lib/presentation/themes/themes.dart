@@ -17,6 +17,9 @@ ThemeData lightTheme() => ThemeData(
       ),
       scaffoldBackgroundColor: lightPrimaryColor,
       textTheme: lightTextTheme,
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
+        color: darkPrimaryColor,
+      ),
     );
 
 ThemeData darkTheme() => ThemeData(
@@ -33,4 +36,7 @@ ThemeData darkTheme() => ThemeData(
       ),
       scaffoldBackgroundColor: darkPrimaryColor,
       textTheme: darkTextTheme,
+      progressIndicatorTheme: const ProgressIndicatorThemeData(
+        color: lightPrimaryColor,
+      ),
     );

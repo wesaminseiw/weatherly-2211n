@@ -1,7 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weatherly/app/utils/extensions.dart';
+import 'package:weatherly/logic/blocs/weather_bloc/weather_bloc.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -60,154 +62,166 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '📍 Cairo',
-                      style: context.bodyMedium,
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Good Morning',
-                      style: context.headlineLarge,
-                    ),
-                    Image.asset('assets/images/1.png'),
-                    Center(
-                      child: Text(
-                        '21°C',
-                        style: context.displayMedium!.copyWith(fontSize: 54),
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    Center(
-                      child: Text(
-                        'THUNDERSTORM',
-                        style: context.headlineSmall,
-                      ),
-                    ),
-                    const SizedBox(height: 5),
-                    Center(
-                      child: Text(
-                        'Friday 16 • 09.41 AM',
-                        style: context.bodyMedium,
-                      ),
-                    ),
-                    const Spacer(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/images/11.png',
-                              scale: 8,
-                            ),
-                            const SizedBox(width: 5),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Sunrise',
-                                  style: context.labelLarge,
+              BlocBuilder<WeatherBloc, WeatherState>(
+                builder: (context, state) {
+                  return state.isLoading == false
+                      ? SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '📍 Cairo',
+                                style: context.bodyMedium,
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                'Good Morning',
+                                style: context.headlineLarge,
+                              ),
+                              Image.asset('assets/images/1.png'),
+                              Center(
+                                child: Text(
+                                  '21°C',
+                                  style: context.displayMedium!.copyWith(fontSize: 54),
                                 ),
-                                const SizedBox(height: 3),
-                                Text(
-                                  '5:34 AM',
-                                  style: context.bodyLarge,
+                              ),
+                              const SizedBox(height: 12),
+                              Center(
+                                child: Text(
+                                  'THUNDERSTORM',
+                                  style: context.headlineSmall,
                                 ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/images/12.png',
-                              scale: 8,
-                            ),
-                            const SizedBox(width: 5),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Sunset',
-                                  style: context.labelLarge,
+                              ),
+                              const SizedBox(height: 5),
+                              Center(
+                                child: Text(
+                                  'Friday 16 • 09.41 AM',
+                                  style: context.bodyMedium,
                                 ),
-                                const SizedBox(height: 3),
-                                Text(
-                                  '5:34 PM',
-                                  style: context.bodyLarge,
+                              ),
+                              const Spacer(),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/11.png',
+                                        scale: 8,
+                                      ),
+                                      const SizedBox(width: 5),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Sunrise',
+                                            style: context.labelLarge,
+                                          ),
+                                          const SizedBox(height: 3),
+                                          Text(
+                                            '5:34 AM',
+                                            style: context.bodyLarge,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/12.png',
+                                        scale: 8,
+                                      ),
+                                      const SizedBox(width: 5),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Sunset',
+                                            style: context.labelLarge,
+                                          ),
+                                          const SizedBox(height: 3),
+                                          Text(
+                                            '5:34 PM',
+                                            style: context.bodyLarge,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.symmetric(vertical: 5),
+                                child: Divider(
+                                  color: Colors.grey,
                                 ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5),
-                      child: Divider(
-                        color: Colors.grey,
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/images/13.png',
-                              scale: 8,
-                            ),
-                            const SizedBox(width: 5),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Temp Max',
-                                  style: context.labelLarge,
-                                ),
-                                const SizedBox(height: 3),
-                                Text(
-                                  '12°C',
-                                  style: context.bodyLarge,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(
-                              'assets/images/14.png',
-                              scale: 8,
-                            ),
-                            const SizedBox(width: 5),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Temp Min',
-                                  style: context.labelLarge,
-                                ),
-                                const SizedBox(height: 3),
-                                Text(
-                                  '8°C',
-                                  style: context.bodyLarge,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 56),
-                  ],
-                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/13.png',
+                                        scale: 8,
+                                      ),
+                                      const SizedBox(width: 5),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Temp Max',
+                                            style: context.labelLarge,
+                                          ),
+                                          const SizedBox(height: 3),
+                                          Text(
+                                            '12°C',
+                                            style: context.bodyLarge,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/images/14.png',
+                                        scale: 8,
+                                      ),
+                                      const SizedBox(width: 5),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Temp Min',
+                                            style: context.labelLarge,
+                                          ),
+                                          const SizedBox(height: 3),
+                                          Text(
+                                            '8°C',
+                                            style: context.bodyLarge,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 56),
+                            ],
+                          ),
+                        )
+                      : const Center(
+                          child: SizedBox(
+                            width: 60,
+                            height: 60,
+                            child: CircularProgressIndicator(),
+                          ),
+                        );
+                },
               ),
             ],
           ),
