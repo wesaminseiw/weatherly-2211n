@@ -2,6 +2,11 @@ import '../../styles/colors.dart';
 import 'package:flutter/material.dart';
 
 TextTheme lightTextTheme = TextTheme(
+  //* display style
+  displayLarge: const TextStyle().copyWith(fontSize: 54, fontWeight: FontWeight.w800, color: lightPrimaryTextColor),
+  displayMedium: const TextStyle().copyWith(fontSize: 42, fontWeight: FontWeight.bold, color: lightPrimaryTextColor),
+  displaySmall: const TextStyle().copyWith(fontSize: 36, fontWeight: FontWeight.w600, color: lightPrimaryTextColor),
+
   //* headline style
   headlineLarge: const TextStyle().copyWith(fontSize: 32, fontWeight: FontWeight.bold, color: lightPrimaryTextColor),
   headlineMedium: const TextStyle().copyWith(fontSize: 24, fontWeight: FontWeight.w600, color: lightPrimaryTextColor),
@@ -22,6 +27,11 @@ TextTheme lightTextTheme = TextTheme(
   labelMedium: const TextStyle().copyWith(fontSize: 12, fontWeight: FontWeight.normal, color: lightPrimaryTextColor.withOpacity(0.5)),
 );
 TextTheme darkTextTheme = TextTheme(
+  //* display style
+  displayLarge: const TextStyle().copyWith(fontSize: 54, fontWeight: FontWeight.w800, color: darkPrimaryTextColor),
+  displayMedium: const TextStyle().copyWith(fontSize: 42, fontWeight: FontWeight.bold, color: darkPrimaryTextColor),
+  displaySmall: const TextStyle().copyWith(fontSize: 36, fontWeight: FontWeight.w600, color: darkPrimaryTextColor),
+
   //* headline style
   headlineLarge: const TextStyle().copyWith(fontSize: 32, fontWeight: FontWeight.bold, color: darkPrimaryTextColor),
   headlineMedium: const TextStyle().copyWith(fontSize: 24, fontWeight: FontWeight.w600, color: darkPrimaryTextColor),

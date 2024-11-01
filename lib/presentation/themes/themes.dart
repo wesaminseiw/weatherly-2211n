@@ -4,6 +4,7 @@ import 'package:weatherly/presentation/styles/colors.dart';
 import 'package:weatherly/presentation/themes/custom_themes/text_theme.dart';
 
 ThemeData lightTheme() => ThemeData(
+      fontFamily: 'Montserrat',
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -11,6 +12,7 @@ ThemeData lightTheme() => ThemeData(
           statusBarBrightness: Brightness.light,
           statusBarIconBrightness: Brightness.dark,
           systemNavigationBarColor: lightPrimaryColor,
+          statusBarColor: Colors.transparent,
         ),
       ),
       scaffoldBackgroundColor: lightPrimaryColor,
@@ -18,6 +20,7 @@ ThemeData lightTheme() => ThemeData(
     );
 
 ThemeData darkTheme() => ThemeData(
+      fontFamily: 'Montserrat',
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -25,6 +28,7 @@ ThemeData darkTheme() => ThemeData(
           statusBarBrightness: Brightness.dark,
           statusBarIconBrightness: Brightness.light,
           systemNavigationBarColor: darkPrimaryColor,
+          statusBarColor: Colors.transparent,
         ),
       ),
       scaffoldBackgroundColor: darkPrimaryColor,
